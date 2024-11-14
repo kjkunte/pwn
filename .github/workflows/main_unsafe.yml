@@ -15,6 +15,6 @@ jobs:
 
       - name: Run tests
         run: |
-          bash run-test.sh
+          bash test_script.sh
         env:
           API_key: ${{ secrets.API_key }} # Ensure secrets.API_key exists in the repository settings
