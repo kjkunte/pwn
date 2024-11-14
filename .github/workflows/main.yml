@@ -1,0 +1,23 @@
+name: "Safe Pull Reques"
+on:
+ pull_request: 
+
+jobs: 
+  test:
+  runs-on: ubuntu-latest
+
+steps:
+  name: check out repository
+  uses: action/checkout@v2
+  with:
+  ref: ${{github.event.pul_request.head.sha}}
+
+  name: run tests
+    run: |
+      bash run-test.sh
+  env:
+    API_key: ${{ secret.API_key}}
+    
+    
+
+  
